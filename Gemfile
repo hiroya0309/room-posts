@@ -19,8 +19,13 @@ gem 'coffee-rails', '4.0.1'
 gem 'jquery-rails', '3.1.2'
 gem 'turbolinks', '2.5.1'
 gem 'jbuilder', '1.5.3'
-gem "paperclip"
+gem 'paperclip', '~> 4.2.1'
 
 group :doc do
   gem 'sdoc', '0.4.1', require: false
+end
+
+group :production do
+    gem 'pg'
+    gem 'rails_12factor'
 end
