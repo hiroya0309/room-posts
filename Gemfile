@@ -26,6 +26,6 @@ group :doc do
 end
 
 group :production do
-    gem 'pg'
-    gem 'rails_12factor'
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
 end
