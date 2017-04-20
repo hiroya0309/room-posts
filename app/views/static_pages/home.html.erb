@@ -12,22 +12,45 @@
       </section>
     </aside>
   <div class="col-md-8">
-    <h3>Micropost Feed</h3>
+    <h3></h3>
     <%= render 'shared/feed' %>
   </div>
   </div>
 <% else %>
   <div class="center jumbotron">
-  <h1>Welcome to the Sample App</h1>
+  <h1 class="home-title">あなたの部屋を紹介しませんか？</h1>
 
-  <h2>
-    This is the home page for the
-    <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
-  </h2>
+  <p><img alt="Heya" src="/assets/breather-7169.jpg" class="heya"></p>
 
-  <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg btn-primary" %>
-</div>
-
-<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+  <%= link_to "新規登録", new_user_registration_path, class: "top_btn" %>
+  <%= link_to "ログイン", new_user_session_path , class: "sin_btn"  %>
+  
+  
+  
+  <h3 class="home-coment-h3">✔投稿する</h3>
+  <h2 class="home-coment-h2">自分の部屋を自慢してみよう！</h2> 
+  <h3 class="home-coment-h3">✔閲覧する</h3>
+  <h2 class="home-coment-h2">気になる部屋をチェックしてみよう！</h2>
+  
+  
+  </div>
+  
+  <h4 class="home-coment-h4">最新投稿</h4>
+  
+  <ul style="width:100%;overflow:hidden;list-style:none;" class="micropost_images-wrap">
+  <% @latest_microposts.each do |latest_micropost| %>
+      <!--<li style="width:30%;float:left;">コメント：<%= latest_micropost.content %></li>-->
+      <li style="float:left;">
+        <%= image_tag latest_micropost.image, class: "micropost_images" %>
+        <div><%= @users.find(latest_micropost.user_id).name %></div>
+      </li>
+  <% end %>
+  </ul>
+  
+<!--<ul style="width:100%;overflow:hidden;">-->
+<!--  <li style="width:30%;float:left;">ここに画像1を入れる</li>-->
+<!--  <li style="width:30%;float:left;">ここに画像2を入れ</li>-->
+<!--  <li style="width:30%;float:left;">ここに画像3を入れる</li>-->
+<!--</ul>-->
+　
 <% end %>

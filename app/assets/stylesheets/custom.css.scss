@@ -1,5 +1,6 @@
 @import "bootstrap";
 
+
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
@@ -18,7 +19,7 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 80px;
 }
 
 section {
@@ -30,9 +31,10 @@ textarea {
 }
 
 .center {
-  text-align: center;
   h1 {
     margin-bottom: 10px;
+    text-align: left;
+    color: #800000;
   }
 }
 
@@ -47,15 +49,26 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
-}
+  font-family: 'あなたの部屋を共有しませんか？', sans-serif;
+  
+}  
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.0em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
+  margin-bottom: 40px;
   font-weight: normal;
-  color: $gray-light;
+  color: #000;
+  padding-left: 10px;
+}
+
+h3 {
+  font-size: 1.5em;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+  font-weight: normal;
+  color: #000;
+  padding-left: 10px;
 }
 
 p {
@@ -63,8 +76,13 @@ p {
   line-height: 1.7em;
 }
 
-
 /* header */
+
+
+.navbar-inverse {
+  background-color: #808080;
+  border-color:  #C0C0C0;
+}
 
 #logo {
   float: left;
@@ -76,8 +94,9 @@ p {
   padding-top: 12px;
   font-weight: bold;
   line-height: 1;
+  font-family: 'Room', sans-serif;
   &:hover {
-    color: white;
+    color: #000;
     text-decoration: none;
   }
 }
@@ -138,7 +157,7 @@ aside {
       text-align: left;
       letter-spacing: -1px;
       margin-bottom: 3px;
-      margin-top: 0px;
+      margin-top: 1px;
     }
   }
 }
@@ -210,10 +229,13 @@ input {
 .users {
   list-style: none;
   margin: 0;
+  overflow: hidden;
   li {
     overflow: auto;
     padding: 10px 0;
     border-top:1px solid $gray-lighter;
+    float: left;
+    width: 30%;
     &:last-child {
       border-bottom: 1px solid $gray-lighter;
     }
@@ -246,4 +268,131 @@ aside {
     height: 100px;
     margin-bottom: 5px;
   }
+}
+
+.top_btn, .top_btn:focus {
+    position: relative;
+	  background-color: #1abc9c;
+	  border-radius: 4px;
+	  color: #fff;
+	  line-height: 52px;
+	  -webkit-transition: none;
+	  transition: none;
+	  box-shadow: 0 3px 0 #0e8c73;
+	  text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+    font-family: '新規登録', sans-serif;
+    font-size: 1.2em;
+    padding: 0px 20px;
+    margin-top: -400px;
+    text-indent: .4em;
+    display: block;
+    width: 140px;
+    text-align: center;
+    position: relative; top: 0; left:750px;
+    &:hover {
+    background-color: #31c8aa;
+	  box-shadow: 0 3px 0 #23a188;
+    &:active {
+    top: 3px;
+	  box-shadow: none;
+     }
+    }
+}
+
+.sin_btn, .sin_btn:focus {
+   osition: relative;
+	  background-color: #f7d034;
+	  border-radius: 4px;
+	  color: #fff;
+	  line-height: 52px;
+	  -webkit-transition: none;
+	  transition: none;
+	  box-shadow: 0 3px 0 #f7ba59;
+	  text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+    font-family: 'ログイン', sans-serif;
+    font-size: 1.2em;
+    padding: 0px 20px;
+    margin-top: 20px;
+    text-indent: .4em;
+    display: block;
+    width: 140px;
+    text-align: center;
+    position: relative; top: 0; left:750px;
+    margin: 40px 0px;
+    &:hover {
+    background-color: #f7ef34;
+	  box-shadow: 0 3px 0 #f7ba59;
+    &:active {
+    top: 3px;
+	  box-shadow: none;
+     }
+    }
+}
+
+
+.jumbotron h1.home-title {
+  font-size: 40px;
+}
+
+.menu {
+  font-family: 'Room posts', sans-serif;
+  font-size: 18px;
+  color: #fff;
+}
+
+.jumbotron  {
+  background-color: #eeeeee;
+  padding: 10px;
+}
+
+img.heya {
+ width: 550px;
+  height: 400px;
+  margin: 30px;
+} 
+
+
+
+.about_top h2 {
+  position: relative;
+  padding: 0 10px;
+  font-size: 2.0em;
+  color: #000;
+  margin: 0 0 25px;
+  border-bottom: 1px solid #000;
+}
+
+h1.users-title {
+  text-align: left;
+  font-size: 18px;
+}
+
+
+.micropost_images-wrap li {
+  margin-right: 50px;
+  margin-bottom: 50px;
+  background-color: #eeeeee;
+  padding: 7px;
+}
+
+.micropost_images {
+  width: 300px;
+  height: 200px;
+  
+}
+
+.home-coment-h3 {
+  padding-left: 735px;
+}
+
+.home-coment-h2 { 
+    padding-left: 755px;
+}
+
+.home-coment-h4 {
+  margin: 0 0 20px;
+  border-bottom: 1px solid #808080;
+  font-size: 16px;
+  font-family: '最新投稿', sans-serif;
+  padding-top: 50px;
 }

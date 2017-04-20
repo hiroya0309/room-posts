@@ -1,29 +1,32 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "sample app", root_path, id: "logo" %>
+    <%= link_to "Room posts", root_path, id: "logo" %>
       <nav>
-        <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "Home",    root_path %></li>
-          <li><%= link_to "Help",    help_path %></li>
+        <ul class="nav nav-pills navbar-right">
+          <li><%= link_to "トップページ",    root_path , class: "menu" %></li>
           <% if user_signed_in? %>
-            <li><%= link_to "Users", users_path %></li>
+            <li><%= link_to "会員", users_path , class: "menu" %></li>
             <li id="fat-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Account <b class="caret"></b>
+              <a href="#" class="dropdown-toggle menu"  data-toggle="dropdown">
+                 アカウント情報 <b  class="caret"></b>
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to "Profile", current_user %></li>
-                <li><%= link_to "Settings", edit_user_registration_path %></li>
+                <li><%= link_to "プロフィール", current_user %></li>
+                <li><%= link_to "登録情報", edit_user_registration_path %></li>
                 <li class="divider"></li>
                 <li>
-                  <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
-                </li>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: "delete" %>
+                </li> 
               </ul>
             </li>
           <% else %>
-            <li><%= link_to "Sign in", new_user_session_path %></li>
-          <% end %>
+            <li><%= link_to "新規登録",    new_user_registration_path , class: "menu" %></li>
+            <li><%= link_to "ログイン", new_user_session_path , class: "menu"  %></li>
+            
+             
+                
+            <% end %>
         </ul>
       </nav>
-    </div>
+  </div>
 </header>

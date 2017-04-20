@@ -1,5 +1,17 @@
-<% if micropost.image? %>
-  <iv class="image">
-    <%= image_tag micropost.image.url(:thumb) %>
-  </div>
-<% end %>
+<li>
+  <span class="content"><%= micropost.content %></span>
+  <% if micropost.image? %>
+    <div class="image">
+      <%= image_tag micropost.image.url(:thumb) %>
+    </div>
+  <% end %>
+  
+  <span class="timestamp">
+    投稿 <%= time_ago_in_words(micropost.created_at) %> 前.
+  </span>
+  <% if current_user == micropost.user %>
+    <%= link_to "削除", micropost, method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: micropost.content %>
+  <% end %>
+</li>

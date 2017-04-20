@@ -4,7 +4,16 @@ class StaticPagesController < ApplicationController
       @micropost  = current_user.microposts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
    end
+   #Article.where('created_at > ?', 1.weeks.ago)
+    #   @latest_microposts = Micropost.where('created_at > ?', 2.weeks.ago)
+    @latest_microposts = Micropost.where("image_file_name not ?", nil).limit(6)
+    @users  = User.all
+    #   abort @latest_microposts.inspect
   end
+  
+#   def index
+#     Article.where('created_at > ?', 1.weeks.ago)
+#   end
 
   def help
   end
