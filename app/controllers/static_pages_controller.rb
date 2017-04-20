@@ -6,7 +6,7 @@ class StaticPagesController < ApplicationController
    end
    #Article.where('created_at > ?', 1.weeks.ago)
     #   @latest_microposts = Micropost.where('created_at > ?', 2.weeks.ago)
-    @latest_microposts = Micropost.where("image_file_name not ?", nil).limit(6)
+    @latest_microposts = Micropost.where.not(image_file_name: nil).limit(6)
     @users  = User.all
     #   abort @latest_microposts.inspect
   end
