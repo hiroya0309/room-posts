@@ -8,9 +8,6 @@ class Micropost < ActiveRecord::Base
   # has_attached_file :image, styles: { medium: "500x350>", thumb: "50x50>" }
   has_attached_file :image,
                     :styles => { medium: "500x350>", thumb: "50x50>" },
-                    # S3用の設定
-                    :storage => :s3,
-                    :s3_credentials => "config/s3.yml",
                     :path => ":attachment/:id/:style.:extension"
 
     # 画像の拡張子を限定するためのvalidatorを定義
