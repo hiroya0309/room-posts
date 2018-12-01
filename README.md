@@ -1,1 +1,1 @@
-# room postsのアプリケーションです
+# Twitter模範アプリroom-posts
